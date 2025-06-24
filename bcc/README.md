@@ -1,11 +1,11 @@
-# 🎓 BCC — Computer Science
+# 🎓 BCC — Bachelor in Computer Science
 
-This folder contains exercises developed during my **Bachelor of Computer Science** course.
+This folder contains programming exercises developed as part of my **Bachelor's Degree in Computer Science**.
 
-🧠 You'll find here:
+📘 Each subfolder groups exercises by language or subject covered in coursework.
 
-- Assignments from subjects like Programming Logic, Data Structures, Algorithms, etc.
-- Code from classwork, lab sessions, and academic projects
-- A mix of beginner, intermediate, and advanced exercises as the course progresses
+### Subfolders:
 
-> This is part of my academic journey. Some code is raw, others refined — all are part of the learning process 🚀
+- `c++/`: C++ exercises, including language fundamentals, functions, data structures, and academic challenges
+
+> This directory tracks my academic growth through hands-on coding.

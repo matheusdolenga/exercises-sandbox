@@ -1,5 +1,12 @@
+# 🔧 Functions in C++ — Coursework
 
-# Exercises - Function
+This folder is dedicated to **function-focused exercises in C++**, developed as part of my academic studies.
 
-Here I store any c++ function exercise that I consider relevant for future reference
+📌 Concepts covered:
 
+- Declaring and calling functions
+- Parameter passing and return values
+- Variable scope and lifetime
+- Recursive functions and function overloading
+
+> These exercises reinforced best practices for writing modular, reusable, and maintainable code in C++.

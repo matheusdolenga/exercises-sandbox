@@ -1,13 +1,16 @@
-# 🔧 C++ Functions — BCC
+# 💻 C++ — Computer Science Track
 
-This folder contains exercises focused on **functions in C++**, developed during my **Bachelor of Computer Science** coursework.
+This folder contains exercises written in **C++** as part of my university coursework in Computer Science.
 
-🧠 Covered topics include:
+🧠 Topics include:
 
-- Function declarations and definitions
-- Parameters and return values
-- Scope of variables
-- Recursion and inline functions
-- Function overloading (when applicable)
+- Basic syntax and language structures
+- Data types and control flow
+- Functions and modular code
+- Academic programming tasks and logic problems
 
-> These exercises help reinforce modular thinking and prepare for building larger, more structured C++ programs.
+### Subfolder:
+
+- `functions/`: Exercises focused on C++ function design and usage
+
+> These exercises helped solidify my understanding of structured and procedural programming using C++.
