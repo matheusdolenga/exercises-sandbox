@@ -1,0 +1,82 @@
+/* css/style.css */
+:root {
+  --cor-primaria: #2c3e50;
+  --cor-secundaria: #3498db;
+  --cor-texto: #ecf0f1;
+  --fonte-principal: 'Arial', sans-serif;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  background-color: #333;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex; /* Para alinhar os itens do menu */
+  justify-content: center;
+}
+
+nav li {
+  float: left;
+}
+
+nav a {
+  display: block;
+  color: var(--cor-texto);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--cor-secundaria);
+}
+
+main {
+    padding: 20px;
+    min-height: 70vh; /* Garante que o conteúdo ocupe espaço */
+}
+
+footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Ajusta todos os labels para ficarem acima dos campos, com espaçamento adequado */
+form label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+/* Ajusta o espaçamento dos campos do formulário */
+form div {
+  margin-bottom: 16px;
+}
+
+/* Ajusta o textarea para ocupar 100% da largura do container */
+form textarea {
+  width: 100%;
+  resize: vertical;
+}

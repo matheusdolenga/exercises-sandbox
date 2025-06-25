@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Metadados da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário - Meu Site</title>
+    <!-- Importa o CSS principal -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Cabeçalho do site -->
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+
+    <!-- Navegação principal -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="form.html">Formulário</a></li>
+            <li><a href="about.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Título e instrução -->
+        <h2>Dados Recebidos</h2>
+        <p>Obrigado pelo seu contato! Abaixo estão os dados que você enviou:</p>
+
+        <!-- Div onde os dados recebidos serão exibidos -->
+        <div id="dadosRecebidos"></div>
+
+        <!-- Script para exibir os dados recebidos via GET -->
+        <script>
+            // Aguarda o carregamento do DOM
+            document.addEventListener('DOMContentLoaded', function() {
+                // Lê os parâmetros da URL
+                const params = new URLSearchParams(window.location.search);
+
+                // Obtém os valores enviados pelo formulário
+                const nome = params.get('nome');
+                const email = params.get('email');
+                const idade = params.get('idade');
+                const mensagem = params.get('mensagem');
+                
+                // Seleciona a div onde os dados serão exibidos
+                const containerDados = document.getElementById('dadosRecebidos');
+
+                // Exibe os dados recebidos no HTML
+                containerDados.innerHTML = `
+                    <p><strong>Nome:</strong> ${nome || 'Não informado'}</p>
+                    <p><strong>E-mail:</strong> ${email || 'Não informado'}</p>
+                    <p><strong>Idade:</strong> ${idade || 'Não informada'}</p>
+                    <p><strong>Mensagem:</strong> ${mensagem || 'Não informada'}</p>
+                `;
+            });
+        </script>
+    </main>
+
+    <!-- Rodapé do site -->
+    <footer>
+        <p>&copy; 2025 - Matheus Santos Dolenga</p>
+    </footer>
+
+    <!-- Importa o script global (caso precise de funcionalidades JS em todas as páginas) -->
+    <script src="js/script.js"></script>
+</body>
+</html>

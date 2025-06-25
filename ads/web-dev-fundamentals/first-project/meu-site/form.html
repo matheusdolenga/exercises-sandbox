@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Metadados básicos do documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário - Meu Site</title>
+    <!-- Importa o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+    <!-- Cabeçalho do site -->
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+
+    <!-- Navegação principal do site -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="form.html">Formulário</a></li>
+            <li><a href="about.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Título e instrução do formulário -->
+        <h2>Formulário de Contato</h2>
+        <p>Preencha todos os campos abaixo.</p>
+
+        <!-- Formulário de contato -->
+        <form id="meuFormulario" action="formAction.html" method="GET">
+            <div>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <br>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <br>
+            <div>
+                <label for="idade">Idade:</label>
+                <!-- Campo de idade com restrição mínima e máxima -->
+                <input type="number" id="idade" name="idade" required min="18" required max="120">
+                <small>Idade mínima: 18 anos.</small>
+            </div>
+            <br>
+            <div>
+                <!-- Label acima do campo de mensagem -->
+                <label for="mensagem" style="display: block; margin-bottom: 4px;">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            </div>
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <!-- Rodapé do site -->
+    <footer>
+        <p>&copy; 2025 - Matheus Santos Dolenga</p>
+    </footer>
+
+    <!-- Importa o script JavaScript para validação do formulário -->
+    <script src="js/script.js"></script>
+</body>
+</html>
