@@ -17,6 +17,9 @@ exercises-sandbox/
 ├── bcc/
 │   └── c++/
 │       └── functions/      # C++ function exercises from academic coursework
+├── ads/
+│   └── web-dev-fundamentals/
+│       └── first-project/  # My first web dev project from academic coursework
 ├── python/                 # Python challenge scripts and experiments
 ├── javascript/             # JavaScript logic and basic web experiments
 ├── algorithms/             # Multi-language algorithmic problem solutions
