@@ -25,8 +25,10 @@ nav a {
   font-weight: bold;
   transition: color 0.2s;
 }
-nav a:hover {
-  color: #ffd700;
+nav a:hover,
+nav a:focus {
+  color: #222;
+  background: none;
 }
 main {
   max-width: 800px;
@@ -34,7 +36,7 @@ main {
   background: #fff;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 section {
   margin-bottom: 32px;
@@ -48,4 +50,18 @@ footer {
   width: 100%;
   bottom: 0;
   left: 0;
+}
+a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+a:hover,
+a:focus {
+  color: #222;
+  background: #e3f2fd;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.1);
+  outline: none;
 }
