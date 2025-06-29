@@ -65,3 +65,105 @@ a:focus {
   box-shadow: 0 2px 8px rgba(25, 118, 210, 0.1);
   outline: none;
 }
+
+/* Adiciona um visual moderno e convidativo ao formulário */
+#formulario {
+  background: #fff;
+  max-width: 430px;
+  margin: 32px auto 32px auto;
+  padding: 32px 28px 24px 28px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.13);
+  border: 1px solid #e0e0e0;
+}
+#formulario h2 {
+  text-align: center;
+  color: #2d3e50;
+  margin-bottom: 18px;
+}
+#contatoForm label {
+  font-weight: 500;
+  color: #2d3e50;
+  margin-bottom: 4px;
+  display: block;
+}
+#contatoForm input[type="text"],
+#contatoForm input[type="email"],
+#contatoForm input[type="tel"],
+#contatoForm textarea {
+  width: 92%;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  margin-left: 0;
+  margin-right: auto;
+  display: block;
+  border: 1px solid #bfc9d1;
+  border-radius: 7px;
+  font-size: 1rem;
+  background: #f8fafc;
+  transition: border 0.2s;
+}
+#contatoForm input[type="text"]:focus,
+#contatoForm input[type="email"]:focus,
+#contatoForm input[type="tel"]:focus,
+#contatoForm textarea:focus {
+  border: 1.5px solid #4f8cff;
+  outline: none;
+  background: #fff;
+}
+#contatoForm fieldset {
+  margin-bottom: 10px;
+  padding: 0 0 0 2px;
+}
+#contatoForm legend {
+  font-size: 0.98rem;
+  color: #4f8cff;
+  margin-bottom: 4px;
+}
+#contatoForm input[type="checkbox"] {
+  accent-color: #4f8cff;
+  margin-right: 4px;
+}
+#contatoForm label[for^="manha"],
+#contatoForm label[for^="tarde"],
+#contatoForm label[for^="noite"] {
+  margin-right: 12px;
+}
+#contatoForm button[type="submit"] {
+  width: 100%;
+  background: linear-gradient(90deg, #4f8cff 60%, #2d3e50 100%);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.08);
+  transition: background 0.2s;
+}
+#contatoForm button[type="submit"]:hover {
+  background: linear-gradient(90deg, #2d3e50 0%, #4f8cff 100%);
+}
+#mensagemSucesso {
+  text-align: center;
+  font-weight: 500;
+  color: #1abc9c !important;
+  background: #eafaf1;
+  border-radius: 7px;
+  padding: 10px 0 8px 0;
+  margin-top: 16px !important;
+  border: 1px solid #b2f2d7;
+}
+@media (max-width: 600px) {
+  #formulario {
+    padding: 18px 6vw 18px 6vw;
+  }
+  #contatoForm input[type="text"],
+  #contatoForm input[type="email"],
+  #contatoForm input[type="tel"],
+  #contatoForm textarea {
+    width: 100%;
+  }
+}

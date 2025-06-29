@@ -24,13 +24,44 @@
         <h2>Entre em contato comigo</h2>
         <form id="contatoForm">
           <label for="nome">Nome:</label><br />
-          <input type="text" id="nome" name="nome" required /><br /><br />
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required /><br /><br />
 
           <label for="email">E-mail:</label><br />
-          <input type="email" id="email" name="email" required /><br /><br />
+          <input type="email" id="email" name="email" placeholder="Seu e-mail para contato" required /><br /><br />
+
+          <label for="telefone">Telefone para contato:</label><br />
+          <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" pattern="\(\d{2}\) \d{4,5}-\d{4}" required /><br /><br />
+
+          <label>Melhor momento para contato:</label><br />
+          <fieldset style="border: none; padding: 0; margin-bottom: 10px;">
+            <legend style="font-weight: bold;">Dias da semana:</legend>
+            <input type="checkbox" id="segunda" name="dias[]" value="Segunda-feira" />
+            <label for="segunda">Segunda-feira</label>
+            <input type="checkbox" id="terca" name="dias[]" value="Terça-feira" />
+            <label for="terca">Terça-feira</label>
+            <input type="checkbox" id="quarta" name="dias[]" value="Quarta-feira" />
+            <label for="quarta">Quarta-feira</label>
+            <input type="checkbox" id="quinta" name="dias[]" value="Quinta-feira" />
+            <label for="quinta">Quinta-feira</label>
+            <input type="checkbox" id="sexta" name="dias[]" value="Sexta-feira" />
+            <label for="sexta">Sexta-feira</label>
+            <input type="checkbox" id="sabado" name="dias[]" value="Sábado" />
+            <label for="sabado">Sábado</label>
+            <input type="checkbox" id="domingo" name="dias[]" value="Domingo" />
+            <label for="domingo">Domingo</label>
+          </fieldset>
+          <fieldset style="border: none; padding: 0; margin-bottom: 10px;">
+            <legend style="font-weight: bold;">Faixa de horário:</legend>
+            <input type="checkbox" id="manha" name="horarios[]" value="Manhã (08h-12h)" />
+            <label for="manha">Manhã (08h-12h)</label>
+            <input type="checkbox" id="tarde" name="horarios[]" value="Tarde (12h-18h)" />
+            <label for="tarde">Tarde (12h-18h)</label>
+            <input type="checkbox" id="noite" name="horarios[]" value="Noite (18h-22h)" />
+            <label for="noite">Noite (18h-22h)</label>
+          </fieldset>
 
           <label for="mensagem">Mensagem:</label><br />
-          <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br /><br />
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva sua solicitação" required></textarea><br /><br />
 
           <button type="submit">Enviar</button>
         </form>
@@ -43,8 +74,30 @@
       <p>&copy; 2025 Matheus Dolenga. Todos os direitos reservados.</p>
     </footer>
     <script>
+      // Máscara automática para telefone
+      document.getElementById('telefone').addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length > 11) value = value.slice(0, 11);
+        if (value.length > 6) {
+          e.target.value = `(${value.slice(0,2)}) ${value.slice(2,7)}-${value.slice(7)}`;
+        } else if (value.length > 2) {
+          e.target.value = `(${value.slice(0,2)}) ${value.slice(2)}`;
+        } else if (value.length > 0) {
+          e.target.value = `(${value}`;
+        } else {
+          e.target.value = '';
+        }
+      });
+      
       document.getElementById('contatoForm').addEventListener('submit', function(e) {
         e.preventDefault();
+        // Validação extra para telefone
+        var telefone = document.getElementById('telefone').value;
+        var telefoneRegex = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+        if (!telefoneRegex.test(telefone)) {
+          alert('Por favor, insira um telefone válido no formato (99) 99999-9999.');
+          return;
+        }
         document.getElementById('contatoForm').reset();
         document.getElementById('mensagemSucesso').style.display = 'block';
       });
