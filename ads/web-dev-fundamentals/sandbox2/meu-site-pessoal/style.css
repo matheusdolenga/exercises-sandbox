@@ -112,22 +112,45 @@ a:focus {
   background: #fff;
 }
 #contatoForm fieldset {
-  margin-bottom: 10px;
-  padding: 0 0 0 2px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 0;
 }
 #contatoForm legend {
-  font-size: 0.98rem;
-  color: #4f8cff;
-  margin-bottom: 4px;
+  width: 100%;
+  margin-bottom: 2px;
+  font-size: 0.97rem;
 }
 #contatoForm input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin-right: 2px;
   accent-color: #4f8cff;
-  margin-right: 4px;
+  vertical-align: middle;
 }
+#contatoForm label[for^="segunda"],
+#contatoForm label[for^="terca"],
+#contatoForm label[for^="quarta"],
+#contatoForm label[for^="quinta"],
+#contatoForm label[for^="sexta"],
+#contatoForm label[for^="sabado"],
+#contatoForm label[for^="domingo"],
 #contatoForm label[for^="manha"],
 #contatoForm label[for^="tarde"],
 #contatoForm label[for^="noite"] {
-  margin-right: 12px;
+  margin-right: 6px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #2d3e50;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+#contatoForm fieldset > * {
+  margin-bottom: 0 !important;
 }
 #contatoForm button[type="submit"] {
   width: 100%;
@@ -165,5 +188,8 @@ a:focus {
   #contatoForm input[type="tel"],
   #contatoForm textarea {
     width: 100%;
+  }
+  #contatoForm fieldset {
+    gap: 3px 4px;
   }
 }
