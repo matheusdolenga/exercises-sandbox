@@ -23,50 +23,40 @@
       <section id="formulario">
         <h2>Entre em contato comigo</h2>
         <form id="contatoForm">
-          <label for="nome">Nome:</label><br />
-          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required /><br /><br />
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required /><br />
 
-          <label for="email">E-mail:</label><br />
-          <input type="email" id="email" name="email" placeholder="Seu e-mail para contato" required /><br /><br />
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" placeholder="Seu e-mail para contato" required /><br />
 
-          <label for="telefone">Telefone para contato:</label><br />
-          <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" pattern="\(\d{2}\) \d{4,5}-\d{4}" required /><br /><br />
+          <label for="telefone">Telefone para contato:</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" pattern="\(\d{2}\) \d{4,5}-\d{4}" required /><br />
 
-          <label>Melhor momento para contato:</label><br />
+          <label>Melhor momento para contato:</label>
           <fieldset style="border: none; padding: 0; margin-bottom: 10px;">
             <legend style="font-weight: bold;">Dias da semana:</legend>
-            <input type="checkbox" id="segunda" name="dias[]" value="Segunda-feira" />
-            <label for="segunda">Segunda-feira</label>
-            <input type="checkbox" id="terca" name="dias[]" value="Terça-feira" />
-            <label for="terca">Terça-feira</label>
-            <input type="checkbox" id="quarta" name="dias[]" value="Quarta-feira" />
-            <label for="quarta">Quarta-feira</label>
-            <input type="checkbox" id="quinta" name="dias[]" value="Quinta-feira" />
-            <label for="quinta">Quinta-feira</label>
-            <input type="checkbox" id="sexta" name="dias[]" value="Sexta-feira" />
-            <label for="sexta">Sexta-feira</label>
-            <input type="checkbox" id="sabado" name="dias[]" value="Sábado" />
-            <label for="sabado">Sábado</label>
-            <input type="checkbox" id="domingo" name="dias[]" value="Domingo" />
-            <label for="domingo">Domingo</label>
+            <span class="checkbox-group"><input type="checkbox" id="segunda" name="dias[]" value="Segunda-feira" /><label for="segunda">Segunda-feira</label></span>
+            <span class="checkbox-group"><input type="checkbox" id="terca" name="dias[]" value="Terça-feira" /><label for="terca">Terça-feira</label></span>
+            <span class="checkbox-group"><input type="checkbox" id="quarta" name="dias[]" value="Quarta-feira" /><label for="quarta">Quarta-feira</label></span>
+            <span class="checkbox-group"><input type="checkbox" id="quinta" name="dias[]" value="Quinta-feira" /><label for="quinta">Quinta-feira</label></span>
+            <span class="checkbox-group"><input type="checkbox" id="sexta" name="dias[]" value="Sexta-feira" /><label for="sexta">Sexta-feira</label></span>
+            <span class="checkbox-group"><input type="checkbox" id="sabado" name="dias[]" value="Sábado" /><label for="sabado">Sábado</label></span>
+            <span class="checkbox-group"><input type="checkbox" id="domingo" name="dias[]" value="Domingo" /><label for="domingo">Domingo</label></span>
           </fieldset>
           <fieldset style="border: none; padding: 0; margin-bottom: 10px;">
             <legend style="font-weight: bold;">Faixa de horário:</legend>
-            <input type="checkbox" id="manha" name="horarios[]" value="Manhã (08h-12h)" />
-            <label for="manha">Manhã (08h-12h)</label>
-            <input type="checkbox" id="tarde" name="horarios[]" value="Tarde (12h-18h)" />
-            <label for="tarde">Tarde (12h-18h)</label>
-            <input type="checkbox" id="noite" name="horarios[]" value="Noite (18h-22h)" />
-            <label for="noite">Noite (18h-22h)</label>
+            <span class="checkbox-group"><input type="checkbox" id="manha" name="horarios[]" value="Manhã (08h-12h)" /><label for="manha">Manhã (08h-12h)</label></span>
+            <span class="checkbox-group"><input type="checkbox" id="tarde" name="horarios[]" value="Tarde (12h-18h)" /><label for="tarde">Tarde (12h-18h)</label></span>
+            <span class="checkbox-group"><input type="checkbox" id="noite" name="horarios[]" value="Noite (18h-22h)" /><label for="noite">Noite (18h-22h)</label></span>
           </fieldset>
 
-          <label for="mensagem">Mensagem:</label><br />
+          <label for="mensagem">Mensagem:</label>
           <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva sua solicitação" required></textarea><br /><br />
 
           <button type="submit">Enviar</button>
         </form>
-        <div id="mensagemSucesso" style="display:none; color:green; margin-top:10px;">
-          Obrigado pelo contato! Em breve retornarei.
+        <div id="mensagemSucesso" style="display:none; color: #1976d2; background: #e3f2fd; border-radius: 7px; padding: 14px 0 12px 0; margin-top: 18px; border: 1px solid #90caf9; font-size: 1.08rem; font-weight: 500; text-align: center;">
+          Formulário enviado com sucesso! Em breve você receberá meu contato.
         </div>
       </section>
     </main>
@@ -99,7 +89,17 @@
           return;
         }
         document.getElementById('contatoForm').reset();
-        document.getElementById('mensagemSucesso').style.display = 'block';
+        var msg = document.getElementById('mensagemSucesso');
+        msg.innerHTML = 'Formulário enviado com sucesso! Em breve você receberá meu contato.';
+        msg.style.display = 'block';
+        msg.style.fontWeight = 'bold';
+        msg.style.background = '#e6ffe6';
+        msg.style.border = '1px solid #4CAF50';
+        msg.style.padding = '12px';
+        msg.style.borderRadius = '6px';
+        msg.style.textAlign = 'center';
+        msg.style.marginTop = '16px';
+        msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
     </script>
   </body>

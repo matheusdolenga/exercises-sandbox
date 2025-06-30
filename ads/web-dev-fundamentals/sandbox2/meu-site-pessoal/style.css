@@ -46,10 +46,11 @@ footer {
   color: #fff;
   text-align: center;
   padding: 16px 0;
-  position: fixed;
+  position: static;
   width: 100%;
-  bottom: 0;
-  left: 0;
+  bottom: unset;
+  left: unset;
+  box-shadow: none;
 }
 a {
   color: #1976d2;
@@ -69,12 +70,18 @@ a:focus {
 /* Adiciona um visual moderno e convidativo ao formulário */
 #formulario {
   background: #fff;
-  max-width: 430px;
+  max-width: 650px;
   margin: 32px auto 32px auto;
   padding: 32px 28px 24px 28px;
   border-radius: 18px;
   box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.13);
   border: 1px solid #e0e0e0;
+}
+@media (max-width: 700px) {
+  #formulario {
+    max-width: 98vw;
+    padding: 18px 2vw 18px 2vw;
+  }
 }
 #formulario h2 {
   text-align: center;
@@ -82,18 +89,30 @@ a:focus {
   margin-bottom: 18px;
 }
 #contatoForm label {
-  font-weight: 500;
-  color: #2d3e50;
-  margin-bottom: 4px;
+  font-weight: 600;
+  color: #1976d2;
+  margin-bottom: 0;
   display: block;
+  font-size: 1.07rem;
+  letter-spacing: 0.01em;
+  margin-top: 12px;
+  transition: color 0.2s;
+}
+#contatoForm label:focus-within,
+#contatoForm label:hover {
+  color: #0d47a1;
+}
+#contatoForm label[for^="mensagem"] {
+  margin-top: 18px;
 }
 #contatoForm input[type="text"],
 #contatoForm input[type="email"],
 #contatoForm input[type="tel"],
 #contatoForm textarea {
-  width: 92%;
+  width: 96%;
   padding: 10px 12px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
+  margin-top: 0;
   margin-left: 0;
   margin-right: auto;
   display: block;
@@ -114,20 +133,22 @@ a:focus {
 #contatoForm fieldset {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 10px;
+  gap: 10px 18px;
   align-items: center;
   margin-bottom: 8px;
   padding: 0;
 }
-#contatoForm legend {
-  width: 100%;
-  margin-bottom: 2px;
-  font-size: 0.97rem;
+.checkbox-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 12px;
+  margin-bottom: 4px;
 }
 #contatoForm input[type="checkbox"] {
-  width: 15px;
-  height: 15px;
-  margin-right: 2px;
+  width: 16px;
+  height: 16px;
+  margin: 0;
   accent-color: #4f8cff;
   vertical-align: middle;
 }
@@ -141,16 +162,12 @@ a:focus {
 #contatoForm label[for^="manha"],
 #contatoForm label[for^="tarde"],
 #contatoForm label[for^="noite"] {
-  margin-right: 6px;
-  font-size: 0.95rem;
+  margin: 0;
+  font-size: 0.97rem;
   font-weight: 400;
   color: #2d3e50;
-  display: flex;
-  align-items: center;
-  gap: 1px;
-}
-#contatoForm fieldset > * {
-  margin-bottom: 0 !important;
+  cursor: pointer;
+  display: inline;
 }
 #contatoForm button[type="submit"] {
   width: 100%;
