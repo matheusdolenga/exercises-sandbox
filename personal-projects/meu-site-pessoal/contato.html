@@ -22,7 +22,17 @@
     <main>
       <section id="contato">
         <h2>Contato</h2>
-        <p>Você pode entrar em contato pelos canais ou preencher o <a href="formulario.html">formulário</a> para receber meu contato:</p>
+        <p>Você pode entrar em contato pelos canais ou preencher o formulário abaixo para receber meu contato:</p>
+        <form id="contatoForm">
+          <label for="nome">Nome:</label><br />
+          <input type="text" id="nome" name="nome" required /><br />
+          <label for="email">E-mail:</label><br />
+          <input type="email" id="email" name="email" required /><br />
+          <label for="mensagem">Mensagem:</label><br />
+          <textarea id="mensagem" name="mensagem" required></textarea><br />
+          <button type="submit">Enviar</button>
+        </form>
+        <div id="mensagemStatus"></div>
         <ul
           style="
             list-style: none;

@@ -22,4 +22,33 @@ window.addEventListener("DOMContentLoaded", function () {
       this.style.background = "none";
     });
   });
+
+  // Função para enviar o formulário via fetch
+  const form = document.getElementById('contatoForm');
+  if (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const mensagem = document.getElementById('mensagem').value;
+      const statusDiv = document.getElementById('mensagemStatus');
+      statusDiv.textContent = 'Enviando...';
+      try {
+        const response = await fetch('http://localhost:3000/enviar-formulario', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nome, email, mensagem })
+        });
+        const data = await response.json();
+        if (response.ok) {
+          statusDiv.textContent = 'Formulário enviado com sucesso! Verifique seu e-mail.';
+          form.reset();
+        } else {
+          statusDiv.textContent = 'Erro ao enviar. Tente novamente mais tarde.';
+        }
+      } catch (err) {
+        statusDiv.textContent = 'Erro ao conectar com o servidor.';
+      }
+    });
+  }
 });
